@@ -1,0 +1,22 @@
+{
+  // 必须的字段
+  "name": "WeChatReply",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  // 建议提供的字段
+  "description": "WeChat Auto Reply Chrome Plugin",
+  // "default_locale": "en",
+  // 多选一，或者都不提供c
+  "permissions": [ "tabs", "https://wx2.qq.com/*"],//, "downloads", "webRequest","webRequestBlocking", "tabs", "\u003Call_urls\u003E" ],
+  "icons": {
+    "16":"img/WeChat.jpg",
+    "32":"img/WeChat.jpg"
+  },
+  "web_accessible_resources": ["js/inject.js", "js/customInject.js"],
+  "content_scripts": [ {
+    "all_frames": true,
+    "js": [ "js/jquery-3.2.1.js", "js/content.js" ],
+    "matches": [ "https://wx2.qq.com/*" ]
+  }],
+  "offline_enabled": false
+}
